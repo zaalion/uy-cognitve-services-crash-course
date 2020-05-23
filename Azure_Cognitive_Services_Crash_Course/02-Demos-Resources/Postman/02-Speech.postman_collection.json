@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "5d79b442-3ed2-4b67-9a0a-bdb672b8fe08",
+		"name": "02-Speech",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Text to Speech",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJyZWdpb24iOiJjYW5hZGFjZW50cmFsIiwic3Vic2NyaXB0aW9uLWlkIjoiYzdiNDhjMzI4MjE4NGQ0YmFmY2FiNWQ4OTNhMDI3ZDciLCJwcm9kdWN0LWlkIjoiQ29nbml0aXZlU2VydmljZXMuUzAiLCJjb2duaXRpdmUtc2VydmljZXMtZW5kcG9pbnQiOiJodHRwczovL2FwaS5jb2duaXRpdmUubWljcm9zb2Z0LmNvbS9pbnRlcm5hbC92MS4wLyIsImF6dXJlLXJlc291cmNlLWlkIjoiL3N1YnNjcmlwdGlvbnMvMTk5NjljODEtZThmZi00NTg1LThjMmYtM2YxOTZiNTg4MjI3L3Jlc291cmNlR3JvdXBzL3JnLWNjLWNyYXNoLWNvdXJzZS9wcm92aWRlcnMvTWljcm9zb2Z0LkNvZ25pdGl2ZVNlcnZpY2VzL2FjY291bnRzL2NjLWNyYXNoLWNvdXJzZS0wMSIsInNjb3BlIjpbInNwZWVjaHRvaW50ZW50cyIsImh0dHBzOi8vYXBpLm1pY3Jvc29mdHRyYW5zbGF0b3IuY29tLyIsInNwZWVjaHNlcnZpY2VzIl0sImF1ZCI6WyJ1cm46bXMuc3BlZWNoIiwidXJuOm1zLmx1aXMuY2FuYWRhY2VudHJhbCIsInVybjptcy5taWNyb3NvZnR0cmFuc2xhdG9yIiwidXJuOm1zLnNwZWVjaHNlcnZpY2VzLmNhbmFkYWNlbnRyYWwiXSwiZXhwIjoxNTg4OTgwMTI4LCJpc3MiOiJ1cm46bXMuY29nbml0aXZlc2VydmljZXMifQ.2ZZifznXfdlLDeEUl5CFkqCYliwK-G7fBse0G-6HSyo",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/ssml+xml",
+						"type": "text"
+					},
+					{
+						"key": "X-Microsoft-OutputFormat",
+						"value": "audio-16khz-128kbitrate-mono-mp3",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "<speak version='1.0' xml:lang='en-US'><voice xml:lang='en-US' xml:gender='Female'\r\n    name='en-CA-HeatherRUS'>\r\n        We are learning all about Microsoft Azure Cognitive Services! <break time=\"1000ms\" /> Make sure to check the documentation.\r\n</voice></speak>"
+				},
+				"url": {
+					"raw": "https://canadacentral.tts.speech.microsoft.com/cognitiveservices/v1",
+					"protocol": "https",
+					"host": [
+						"canadacentral",
+						"tts",
+						"speech",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"cognitiveservices",
+						"v1"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Speech to Text",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "fca8bdabb0c8423ca7bc80b3300b1215",
+						"type": "text"
+					},
+					{
+						"key": "Content-type",
+						"value": "audio/wav",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/C:/Users/Reza/Google Drive/03-Udemy/01-Cognitive-Services-Overview/03-clips/speech2text-demo.wav"
+					}
+				},
+				"url": {
+					"raw": "https://canadacentral.stt.speech.microsoft.com/speech/recognition/conversation/cognitiveservices/v1?language=en-US",
+					"protocol": "https",
+					"host": [
+						"canadacentral",
+						"stt",
+						"speech",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"speech",
+						"recognition",
+						"conversation",
+						"cognitiveservices",
+						"v1"
+					],
+					"query": [
+						{
+							"key": "language",
+							"value": "en-US"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Bearer Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "fca8bdabb0c8423ca7bc80b3300b1215",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://canadacentral.api.cognitive.microsoft.com/sts/v1.0/issueToken",
+					"protocol": "https",
+					"host": [
+						"canadacentral",
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"sts",
+						"v1.0",
+						"issueToken"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Voices",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJyZWdpb24iOiJjYW5hZGFjZW50cmFsIiwic3Vic2NyaXB0aW9uLWlkIjoiYzdiNDhjMzI4MjE4NGQ0YmFmY2FiNWQ4OTNhMDI3ZDciLCJwcm9kdWN0LWlkIjoiQ29nbml0aXZlU2VydmljZXMuUzAiLCJjb2duaXRpdmUtc2VydmljZXMtZW5kcG9pbnQiOiJodHRwczovL2FwaS5jb2duaXRpdmUubWljcm9zb2Z0LmNvbS9pbnRlcm5hbC92MS4wLyIsImF6dXJlLXJlc291cmNlLWlkIjoiL3N1YnNjcmlwdGlvbnMvMTk5NjljODEtZThmZi00NTg1LThjMmYtM2YxOTZiNTg4MjI3L3Jlc291cmNlR3JvdXBzL3JnLWNjLWNyYXNoLWNvdXJzZS9wcm92aWRlcnMvTWljcm9zb2Z0LkNvZ25pdGl2ZVNlcnZpY2VzL2FjY291bnRzL2NjLWNyYXNoLWNvdXJzZS0wMSIsInNjb3BlIjpbInNwZWVjaHRvaW50ZW50cyIsImh0dHBzOi8vYXBpLm1pY3Jvc29mdHRyYW5zbGF0b3IuY29tLyIsInNwZWVjaHNlcnZpY2VzIl0sImF1ZCI6WyJ1cm46bXMuc3BlZWNoIiwidXJuOm1zLmx1aXMuY2FuYWRhY2VudHJhbCIsInVybjptcy5taWNyb3NvZnR0cmFuc2xhdG9yIiwidXJuOm1zLnNwZWVjaHNlcnZpY2VzLmNhbmFkYWNlbnRyYWwiXSwiZXhwIjoxNTg4OTgwMTI4LCJpc3MiOiJ1cm46bXMuY29nbml0aXZlc2VydmljZXMifQ.2ZZifznXfdlLDeEUl5CFkqCYliwK-G7fBse0G-6HSyo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://canadacentral.tts.speech.microsoft.com/cognitiveservices/voices/list",
+					"protocol": "https",
+					"host": [
+						"canadacentral",
+						"tts",
+						"speech",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"cognitiveservices",
+						"voices",
+						"list"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

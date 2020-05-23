@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1082
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImmReaderApp-Core", "ImmReaderApp-Core\ImmReaderApp-Core.csproj", "{06F5A23B-0A89-47FF-A055-52A1F57263AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06F5A23B-0A89-47FF-A055-52A1F57263AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06F5A23B-0A89-47FF-A055-52A1F57263AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06F5A23B-0A89-47FF-A055-52A1F57263AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06F5A23B-0A89-47FF-A055-52A1F57263AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {537B1124-7181-4A94-8153-BA1EF8999F38}
+	EndGlobalSection
+EndGlobal

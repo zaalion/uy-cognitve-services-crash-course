@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "432f7c82-4562-4e3e-ac70-45b2183ebc11",
+		"name": "05-Web Search",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Spell Check",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "fca8bdabb0c8423ca7bc80b3300b1215",
+						"equals": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://canadacentral.api.cognitive.microsoft.com/bing/v7.0/spellcheck/?text=I am gona use this today!",
+					"protocol": "https",
+					"host": [
+						"canadacentral",
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"bing",
+						"v7.0",
+						"spellcheck",
+						""
+					],
+					"query": [
+						{
+							"key": "text",
+							"value": "I am gona use this today!"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Image Search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"type": "text",
+						"value": "77f5ebabe5514b3d8dda3395b621b3df"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": ""
+					}
+				},
+				"url": {
+					"raw": "https://api.cognitive.microsoft.com/bing/v7.0/images/search?q=m42%20nebula",
+					"protocol": "https",
+					"host": [
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"bing",
+						"v7.0",
+						"images",
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "m42%20nebula"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Autosuggest",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "fca8bdabb0c8423ca7bc80b3300b1215",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://canadacentral.api.cognitive.microsoft.com/bing/v7.0/suggestions?q=Azure",
+					"protocol": "https",
+					"host": [
+						"canadacentral",
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"bing",
+						"v7.0",
+						"suggestions"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "Azure"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Web Search",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "77f5ebabe5514b3d8dda3395b621b3df",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://bscrashdemo01.cognitiveservices.azure.com/bing/v7.0/search?q=cognitive%20services&count=10",
+					"protocol": "https",
+					"host": [
+						"bscrashdemo01",
+						"cognitiveservices",
+						"azure",
+						"com"
+					],
+					"path": [
+						"bing",
+						"v7.0",
+						"search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "cognitive%20services"
+						},
+						{
+							"key": "count",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

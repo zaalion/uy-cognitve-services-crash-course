@@ -1,0 +1,383 @@
+{
+	"info": {
+		"_postman_id": "49c1aef1-4d3b-4b3a-998a-34506aa6fc60",
+		"name": "03-Language",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Text Analytics - Entities",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "eb899fda5685495f8fd2c874a03eb9fb",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"documents\": [\r\n    {\r\n      \"language\": \"en\",\r\n      \"id\": \"1\",\r\n      \"text\": \"London is the capital and largest city of England and the United Kingdom.\"\r\n    }\r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "https://canadacentral.api.cognitive.microsoft.com/text/analytics/v2.1/entities",
+					"protocol": "https",
+					"host": [
+						"canadacentral",
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"text",
+						"analytics",
+						"v2.1",
+						"entities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Text Analytics - Key Phrases",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "eb899fda5685495f8fd2c874a03eb9fb",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"documents\": [\r\n    {\r\n      \"language\": \"en\",\r\n      \"id\": \"1\",\r\n      \"text\": \"Microsoft is an IT company established by Bill Gates. It is the creator on Windows OS.\"\r\n    },\r\n    {\r\n      \"language\": \"fr\",\r\n      \"id\": \"2\",\r\n      \"text\": \"Bonjour tout le monde\"\r\n    }\r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "https://canadacentral.api.cognitive.microsoft.com/text/analytics/v2.1/keyPhrases",
+					"protocol": "https",
+					"host": [
+						"canadacentral",
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"text",
+						"analytics",
+						"v2.1",
+						"keyPhrases"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Text Analytics - Sentiment",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "eb899fda5685495f8fd2c874a03eb9fb",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"documents\": [\r\n    {\r\n      \"language\": \"en\",\r\n      \"id\": \"1\",\r\n      \"text\": \"Hello. I love Azure Cognitive services! It offers many useful features.\"\r\n    },\r\n    {\r\n      \"language\": \"en\",\r\n      \"id\": \"2\",\r\n      \"text\": \"I hate this weather.\"\r\n    }\r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "https://canadacentral.api.cognitive.microsoft.com/text/analytics/v2.1/sentiment",
+					"protocol": "https",
+					"host": [
+						"canadacentral",
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"text",
+						"analytics",
+						"v2.1",
+						"sentiment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Translate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Region",
+						"type": "text",
+						"value": "canadacentral"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"type": "text",
+						"value": "fca8bdabb0c8423ca7bc80b3300b1215"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\"Text\":\"L’API REST Synthèse vocale nécessite un jeton d’accès pour l’authentification. Pour obtenir un jeton d’accès, un échange est nécessaire.\"}\r\n]"
+				},
+				"url": {
+					"raw": "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=en",
+					"protocol": "https",
+					"host": [
+						"api",
+						"cognitive",
+						"microsofttranslator",
+						"com"
+					],
+					"path": [
+						"translate"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "3.0"
+						},
+						{
+							"key": "to",
+							"value": "en"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Transliterate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "fca8bdabb0c8423ca7bc80b3300b1215",
+						"type": "text"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Region",
+						"value": "canadacentral",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\"Text\":\"さようなら\"}\r\n]"
+				},
+				"url": {
+					"raw": "https://api.cognitive.microsofttranslator.com/transliterate?api-version=3.0&language=ja&fromScript=Jpan&toScript=Latn",
+					"protocol": "https",
+					"host": [
+						"api",
+						"cognitive",
+						"microsofttranslator",
+						"com"
+					],
+					"path": [
+						"transliterate"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "3.0"
+						},
+						{
+							"key": "language",
+							"value": "ja"
+						},
+						{
+							"key": "fromScript",
+							"value": "Jpan"
+						},
+						{
+							"key": "toScript",
+							"value": "Latn"
+						}
+					]
+				},
+				"description": "Transliterates"
+			},
+			"response": []
+		},
+		{
+			"name": "Custom Translation",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Region",
+						"value": "canadacentral",
+						"type": "text"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "fca8bdabb0c8423ca7bc80b3300b1215",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n    {\"Text\":\"L’API REST Synthèse vocale nécessite un jeton d’accès pour l’authentification. Pour obtenir un jeton d’accès, un échange est nécessaire.\"}\r\n]"
+				},
+				"url": {
+					"raw": "https://api.cognitive.microsofttranslator.com/translate?api-version=3.0&to=en&catetory=f2a18fb8-1538-4df1-8454-30ea6d798d2e-TECH",
+					"protocol": "https",
+					"host": [
+						"api",
+						"cognitive",
+						"microsofttranslator",
+						"com"
+					],
+					"path": [
+						"translate"
+					],
+					"query": [
+						{
+							"key": "api-version",
+							"value": "3.0"
+						},
+						{
+							"key": "to",
+							"value": "en"
+						},
+						{
+							"key": "catetory",
+							"value": "f2a18fb8-1538-4df1-8454-30ea6d798d2e-TECH"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "QnA Maker",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "EndpointKey 88e8ab9f-e552-44f5-b0c9-f1177f78cc82",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"question\":\"how can I submit a support ticket?\"}"
+				},
+				"url": {
+					"raw": "https://qnamakercrashdemo01.azurewebsites.net/qnamaker/knowledgebases/c6ebf3bb-8ef5-41d4-a629-e58911cee817/generateAnswer",
+					"protocol": "https",
+					"host": [
+						"qnamakercrashdemo01",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"qnamaker",
+						"knowledgebases",
+						"c6ebf3bb-8ef5-41d4-a629-e58911cee817",
+						"generateAnswer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LUIS",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://westus.api.cognitive.microsoft.com/luis/v2.0/apps/e7427301-982a-47a8-8818-21dcb004035b?verbose=true&timezoneOffset=0&subscription-key=488567a78e674245b2fc87505fb22ac2&q=can I order two pepperoni pizzas please?",
+					"protocol": "https",
+					"host": [
+						"westus",
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"luis",
+						"v2.0",
+						"apps",
+						"e7427301-982a-47a8-8818-21dcb004035b"
+					],
+					"query": [
+						{
+							"key": "verbose",
+							"value": "true"
+						},
+						{
+							"key": "timezoneOffset",
+							"value": "0"
+						},
+						{
+							"key": "subscription-key",
+							"value": "488567a78e674245b2fc87505fb22ac2"
+						},
+						{
+							"key": "q",
+							"value": "can I order two pepperoni pizzas please?"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

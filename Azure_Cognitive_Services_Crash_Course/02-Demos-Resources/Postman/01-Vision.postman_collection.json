@@ -1,0 +1,231 @@
+{
+	"info": {
+		"_postman_id": "45d6a5c0-a0a3-4137-a24d-6e91314486eb",
+		"name": "01-Vision",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Face",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/octet-stream",
+						"type": "text"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "fca8bdabb0c8423ca7bc80b3300b1215",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/C:/Users/Reza/Google Drive/02-O'Reilly/01-Getting Started with Azure Cognitive Services/05-Demo-Material/Vision/Bill_Gates_July_2014.jpg"
+					}
+				},
+				"url": {
+					"raw": "https://canadacentral.api.cognitive.microsoft.com/face/v1.0/detect?returnFaceId=true&returnFaceLandmarks=true&returnFaceAttributes=age,gender,headPose",
+					"protocol": "https",
+					"host": [
+						"canadacentral",
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"face",
+						"v1.0",
+						"detect"
+					],
+					"query": [
+						{
+							"key": "returnFaceId",
+							"value": "true"
+						},
+						{
+							"key": "returnFaceLandmarks",
+							"value": "true"
+						},
+						{
+							"key": "returnFaceAttributes",
+							"value": "age,gender,headPose"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Analyze Image",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/octet-stream",
+						"description": "Content type for the image",
+						"type": "text"
+					},
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "fca8bdabb0c8423ca7bc80b3300b1215",
+						"description": "Key for east-us",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/C:/Users/Reza/Google Drive/02-O'Reilly/01-Getting Started with Azure Cognitive Services/05-Demo-Material/Vision/pyramids.jpg"
+					}
+				},
+				"url": {
+					"raw": "https://canadacentral.api.cognitive.microsoft.com/vision/v2.1/analyze?visualFeatures=Categories,Color,Description,Objects,Tags&details=Celebrities,Landmarks",
+					"protocol": "https",
+					"host": [
+						"canadacentral",
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"vision",
+						"v2.1",
+						"analyze"
+					],
+					"query": [
+						{
+							"key": "visualFeatures",
+							"value": "Categories,Color,Description,Objects,Tags"
+						},
+						{
+							"key": "details",
+							"value": "Celebrities,Landmarks"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ink Recognizer",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "5b72dedcd0eb4494968cd5d070d8d9ba",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"language\": \"en-US\",\r\n  \"version\": 1,\r\n  \"strokes\": [\r\n    {\r\n      \"id\": 158,\r\n      \"points\": \"45.4201,57.3953,45.4201,57.1013,45.1262,56.8073,44.8322,56.5134,44.5382,56.2194,43.6563,55.0434,42.7743,53.8675,41.8924,52.6916,41.0104,50.9277,40.1285,49.1638,39.8345,47.6939,39.5405,45.9300,39.2465,43.8721,39.2465,40.6384,39.8345,39.1684,40.4225,37.4046,40.7164,36.5226,41.3044,35.6407,42.1863,34.4647,43.0683,33.2888,43.9502,31.8189,45.1262,30.0550,46.0081,28.5851,46.8900,27.7032,47.7720,27.1152,48.6539,26.2333,49.2419,25.3513,50.4178,24.4694,51.8877,23.2934,52.7697,22.4115,53.6516,22.1175,54.2396,21.8235,55.1215,21.5296,56.5914,21.2356,59.5313,20.9416,62.1771,20.6476,66.5868,20.6476,67.7627,20.6476,68.6447,20.9416,69.5266,21.5296,70.4086,22.4115,71.2905,23.5874,72.7604,25.3513,73.6424,26.2333,74.2303,27.1152,75.1123,28.2911,75.9942,29.7610,76.8762,30.9370,77.1701,32.1129,77.7581,33.2888,78.3461,34.4647,78.6401,37.4046,79.5220,39.7564,79.8160,40.9323,80.1100,42.1083,80.4039,42.6962,80.6979,43.5782,80.9919,44.4601,80.9919,45.0481,80.9919,46.5180,80.9919,47.3999,80.6979,48.2819,80.1100,49.1638,79.2280,49.7518,78.3461,50.6337,77.1701,51.8096,76.2882,52.6916,75.4063,53.2796,74.5243,54.1615,73.6424,55.0434,72.4664,55.9254,71.2905,56.8073,70.4086,57.3953,69.2326,58.2772,68.0567,59.1592,67.1748,59.4532,65.9988,59.7471,65.1169,60.0411,64.2350,60.0411,63.9410,60.0411,63.0590,60.0411,62.1771,60.3351,61.0012,60.3351,60.4132,60.3351,59.2373,60.3351,58.3553,60.3351,57.7674,60.3351,57.1794,60.3351,56.5914,60.3351,55.7095,60.3351,55.1215,60.0411,54.2396,59.7471,53.3576,59.4532,53.0637,59.1592,52.4757,59.1592,52.1817,59.1592,51.2998,59.1592,51.0058,58.8652,50.4178,58.8652,49.5359,58.5712,48.6539,58.2772,48.3600,58.2772,48.3600,57.9833,48.0660,57.9833,47.7720,57.9833,47.1840,57.9833,46.3021,57.9833,46.0081,57.9833,45.7141,57.9833,45.7141,57.6893,45.7141,57.3953,45.4201,57.1013,45.1262,57.1013\"\r\n    }\r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "https://ir-crashcourse-demo01.cognitiveservices.azure.com/inkrecognizer/v1.0-preview/recognize",
+					"protocol": "https",
+					"host": [
+						"ir-crashcourse-demo01",
+						"cognitiveservices",
+						"azure",
+						"com"
+					],
+					"path": [
+						"inkrecognizer",
+						"v1.0-preview",
+						"recognize"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Custom Vision",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Prediction-Key",
+						"value": "e5761d9fe66a4bfab28e33ba634867dd",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/octet-stream",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "/C:/Users/Reza/Google Drive/02-O'Reilly/01-Getting Started with Azure Cognitive Services/05-Demo-Material/Vision/Custom/maple/__testing/sugar-maple-test03.jpg"
+					}
+				},
+				"url": {
+					"raw": "https://eastus.api.cognitive.microsoft.com/customvision/v3.0/Prediction/0f3b50c7-f8a3-476e-a67f-62a35ee82256/classify/iterations/CustomVision/image",
+					"protocol": "https",
+					"host": [
+						"eastus",
+						"api",
+						"cognitive",
+						"microsoft",
+						"com"
+					],
+					"path": [
+						"customvision",
+						"v3.0",
+						"Prediction",
+						"0f3b50c7-f8a3-476e-a67f-62a35ee82256",
+						"classify",
+						"iterations",
+						"CustomVision",
+						"image"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ink Recognizer Call API",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Ocp-Apim-Subscription-Key",
+						"value": "ef85435ca9b2487c82ba17dd679d4f34",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"language\": \"en-US\",\r\n  \"version\": 1,\r\n  \"strokes\": [\r\n    {\r\n      \"id\": 96,\r\n      \"points\": \"40.7458,28.8396,40.7458,29.4746,40.9575,31.3796,41.1692,37.0946,41.3808,44.5029,41.3808,54.8746,41.5925,63.1296,42.0158,68.2096,42.2275,71.8079,43.0742,75.1946,43.2858,75.6179,43.4975,75.4063,43.7092,75.1946,44.9792,74.5596,48.7892,73.7129,55.5625,72.8662,64.4525,72.6546,75.4592,73.7129,91.1225,77.3113,95.3558,78.1579,96.4142,78.3696,96.2025,78.3696,95.9908,78.1579,95.7792,77.9463,95.1442,77.0996,94.2975,74.5596,93.4508,70.7496,92.1808,65.6696,90.2758,56.9912,87.5242,44.5029,86.2542,33.7079,85.1958,22.9129,85.1958,15.9279,85.1958,14.4462,85.4075,13.8112,85.4075,14.0229,85.1958,14.0229,85.1958,14.2346,84.9842,14.4462,84.9842,14.6579,84.5608,14.8696,84.3492,15.0813,83.5025,15.7162,82.2325,16.5629,78.6342,18.2563,71.4375,21.2196,59.5842,25.8762,45.1908,29.8979,32.9142,32.2262,27.8342,33.0729,25.7175,33.2846,25.5058,33.2846,25.5058,33.4963,25.5058,33.7079,25.5058,33.9196,25.7175,34.1313\"\r\n    }\r\n  ]\r\n}"
+				},
+				"url": {
+					"raw": "https://ink-ps-demo01.cognitiveservices.azure.com/inkrecognizer/v1.0-preview/recognize",
+					"protocol": "https",
+					"host": [
+						"ink-ps-demo01",
+						"cognitiveservices",
+						"azure",
+						"com"
+					],
+					"path": [
+						"inkrecognizer",
+						"v1.0-preview",
+						"recognize"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
